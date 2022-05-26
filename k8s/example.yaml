@@ -27,9 +27,9 @@ spec:
   type: "ClusterIP"
   ports:
     - name: "grpc"
-      port: 50051
+      port: 50055
       protocol: "TCP"
-      targetPort: 50051
+      targetPort: 50055
     - name: "http"
       port: 8443
       protocol: "TCP"
@@ -129,7 +129,7 @@ spec:
                   key: "SPICEDB_GRPC_PRESHARED_KEY"
           ports:
             - name: "grpc"
-              containerPort: 50051
+              containerPort: 50055
               protocol: "TCP"
             - name: "http"
               containerPort: 8443
@@ -142,7 +142,7 @@ spec:
               protocol: "TCP"
           readinessProbe:
             exec:
-              command: ["grpc_health_probe", "-v", "-addr=localhost:50051"]
+              command: ["grpc_health_probe", "-v", "-addr=localhost:50055"]
             failureThreshold: 5
             periodSeconds: 10
             successThreshold: 1
