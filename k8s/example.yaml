@@ -106,13 +106,13 @@ spec:
             # with cluster dispatching. For more info see:
             # https://docs.authzed.com/spicedb/selecting-a-datastore
             #
-            # - name: "SPICEDB_DATASTORE_ENGINE"
-            #   value: "cockroachdb"
-            # - name: "SPICEDB_DATASTORE_CONN_URI"
-            #   valueFrom:
-            #     secretKeyRef:
-            #       name: "spicedb"
-            #       key: "SPICEDB_DATASTORE_CONN_URI"
+            - name: "SPICEDB_DATASTORE_ENGINE"
+              value: "postgres"
+            - name: "SPICEDB_DATASTORE_CONN_URI"
+              valueFrom:
+                secretKeyRef:
+                  name: "spicedb"
+                  key: "SPICEDB_DATASTORE_CONN_URI"
             # - name: "SPICEDB_DISPATCH_CLUSTER_ENABLED"
             #   value: "true"
             # - name: "SPICEDB_DISPATCH_UPSTREAM_ADDR"
